@@ -34,8 +34,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public bool sprinting;
 
+	//SWINGING
+	public bool isSwinging; 
+	//public bool groundCheck;
 
-    
 
 
     //COMBAT
@@ -150,7 +152,8 @@ public class PlayerMovement : MonoBehaviour
             //jumpSound.Play();
         }
 
-        
+		//groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
+
       
         
 
