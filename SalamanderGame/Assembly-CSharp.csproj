@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AdagaController.cs" />
+     <Compile Include="Assets\Scripts\AttackingTrigger.cs" />
      <Compile Include="Assets\Scripts\BackToGame.cs" />
      <Compile Include="Assets\Scripts\Climbing.cs" />
      <Compile Include="Assets\Scripts\EnemiesOnPlatforms.cs" />
@@ -64,8 +65,8 @@
      <Compile Include="Assets\Scripts\ParticleScript.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Platformmovement.cs" />
+     <Compile Include="Assets\Scripts\PlayerAttacking.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovementALT.cs" />
      <Compile Include="Assets\Scripts\RopeSystem.cs" />
      <Compile Include="Assets\Scripts\SmoothCameraFollow.cs" />
      <Compile Include="Assets\Scripts\TrapsScript.cs" />
