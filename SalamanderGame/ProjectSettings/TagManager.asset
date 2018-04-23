@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Ground
-  - Player
+  - 
   - Obstacles
   - ClimbingWalls
   - HealthPickUp
@@ -23,7 +23,7 @@ TagManager:
   - Enemy
   - Rope
   - Pivot
-  - 
+  - Player
   - 
   - 
   - 
