@@ -1,82 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour {
+	public bool isPaused;
 
-    public GameObject PauseUI;
-    public GameObject StartUI;
-    private bool Paused = false;
+	public GameObject pauseMenu;
 
-    // Use this for initialization
-    void Start() {
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () 
+	{
+		//pauses the game and brings up the menu when escape has been hit.
+		//also unpauses the menu when 'Escape' is hit a second time.
+		if (isPaused) {
+			pauseMenu.SetActive (true);
+			Time.timeScale = 0f;
+			Cursor.visible = true;
+		} else 
+		{
+			pauseMenu.SetActive (false);
+			Time.timeScale = 1f;
+			Cursor.visible = false;
 
-        PauseUI.SetActive(false);
-    }
+		}
 
-    // Update is called once per frame
-    void Update() {
+		if (Input.GetKeyDown (KeyCode.Escape)) 
+		{
+			isPaused = !isPaused;
+		}
+	}
 
-        //if press pause, pause?unpause the game
+	public void QuitGame()
+	{
+		//Quits the game when Built. If in scene, just shows up in Log.
+		Debug.Log ("Game has been quit");
+		Application.Quit ();
+	}
 
-        if (Input.GetButtonDown("Pause"))
-        {
-            Paused = !Paused;
-        }
-        //if paused, set pause menu active and turn time to 0
-        if (Paused)
-        {
-            PauseUI.SetActive(true);
-            Time.timeScale = 0;
-        }
-        //if not pauset, set the pause menu to false and unpause the time (set back to one)
-        if (!Paused)
-        {
-            PauseUI.SetActive(false);
-            Time.timeScale = 1;
-        }
-    }
+	public void Continue()
+	{
+		//continues the game
+		isPaused = false;
+	}
 
-
-    public void Resume ()
-    {
-        Paused = false;
-    }
-
-    public void Restart()
-    {
-        Application.LoadLevel(Application.loadedLevel);
-    }
-
-  
-
-    public void Exit ()
-
-    {
-        Application.Quit();
-    }
-
-    public void ControlsUI()
-
-    {
-        Application.LoadLevel(1);
-    }
-
-    public void StartGame()
-
-    {
-        StartUI.SetActive(false);
-    }
-
-    public void MainMenu()
-
-    {
-        StartUI.SetActive(true);
-
-        PauseUI.SetActive(false);
-      
-    }
+	public void Restart()
+	{
+		//restarts  the game
+		SceneManager.LoadScene ("Game1");
+	
+	}
 }
-
-
-
