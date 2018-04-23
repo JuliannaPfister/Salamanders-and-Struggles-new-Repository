@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     //not grounded
     bool grounded = false;
-    public Transform groundCheck;
+    public Transform groundChecker;
     float groundRadius = 0.2f;
     //the jump force
     public float jumpForce = 700f;
@@ -35,10 +35,13 @@ public class PlayerMovement : MonoBehaviour
     public bool sprinting;
 
 	//SWINGING
-	public bool isSwinging; 
+	public bool isSwinging;
+	public bool groundCheck;
 	public float swingForce = 4f;
 	public Vector2 ropeHook;
 	private bool isJumping;
+	private float horizontalInput;
+	private float jumpInput;
 	//public bool groundCheck;
 
 
@@ -76,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     
-    void Start()
+    void Awake()
     {
 
 
@@ -99,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         
 
             // if the ground transform hit the whatisground with groundradius
-            grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+            grounded = Physics2D.OverlapCircle(groundChecker.position, groundRadius, whatIsGround);
 
         //tells the animator that player is grounded
         //anim.SetBool("Ground", grounded);

@@ -1680,7 +1680,7 @@ MonoBehaviour:
   ropeJoint: {fileID: 868933871}
   crosshair: {fileID: 1446858416}
   crosshairSprite: {fileID: 1446858417}
-  playerMovement: {fileID: 868933872}
+  playerMovement: {fileID: 868933874}
 --- !u!232 &868933871
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -1699,12 +1699,6 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 0.005
   m_MaxDistanceOnly: 0
---- !u!114 &868933872 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114799637484712864, guid: 6168151d807ec984784bd0ac430cca8b,
-    type: 2}
-  m_PrefabInternal: {fileID: 900797482}
-  m_Script: {fileID: 11500000, guid: bd41b41f549941a4188bae5353473435, type: 3}
 --- !u!120 &868933873
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1793,6 +1787,23 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &868933874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868933868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94ce347012eb264996d89c8bf4f133b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingForce: 4
+  speed: 1
+  jumpSpeed: 3
+  ropeHook: {x: 0, y: 0}
+  isSwinging: 0
+  groundCheck: 0
 --- !u!1001 &900797482
 Prefab:
   m_ObjectHideFlags: 0
@@ -1832,7 +1843,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114799637484712864, guid: 6168151d807ec984784bd0ac430cca8b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114799637484712864, guid: 6168151d807ec984784bd0ac430cca8b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6168151d807ec984784bd0ac430cca8b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &928356727

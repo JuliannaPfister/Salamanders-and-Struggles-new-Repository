@@ -12,7 +12,7 @@ public class RopeSystem : MonoBehaviour
 	public DistanceJoint2D ropeJoint;
 	public Transform crosshair;
 	public SpriteRenderer crosshairSprite;
-	public PlayerMovement playerMovement;
+	public PlayerMovementALTERNATE playerMovement;
 	private bool ropeAttached;
 	private Vector2 playerPosition;
 	private List<Vector2> ropePositions = new List<Vector2>();

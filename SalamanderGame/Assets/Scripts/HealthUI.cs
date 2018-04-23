@@ -9,11 +9,11 @@ public class HealthUI : MonoBehaviour {
 
     public Image HeartsUI;
 
-    private PlayerMovement player;
+    private PlayerMovementALTERNATE player;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovementALTERNATE>();
 
     }
 
