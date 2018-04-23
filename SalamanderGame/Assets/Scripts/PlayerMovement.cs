@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
 	//SWINGING
 	public bool isSwinging; 
+	public float swingForce = 4f;
+	public Vector2 ropeHook;
+	private bool isJumping;
 	//public bool groundCheck;
 
 
@@ -76,8 +79,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
 
-        
-       // anim = GetComponent<Animator>();
+
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         
 
