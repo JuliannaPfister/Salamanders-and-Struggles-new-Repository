@@ -278,11 +278,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingForce: 4
-  speed: 2.5
-  jumpSpeed: 5
   ropeHook: {x: 0, y: 0}
   isSwinging: 0
+  speed: 2.5
+  topSpeed: 2.5
+  sprintSpeed: 7
+  jumpSpeed: 5
   groundCheck: 0
+  sprinting: 0
   health: 5
 --- !u!114 &114528551849846132
 MonoBehaviour:
@@ -302,7 +305,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478434814228512}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32042ad1afbd6994c82d53ad30eea267, type: 3}
   m_Name: 

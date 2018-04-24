@@ -2,23 +2,32 @@
 
 public class PlayerMovementALTERNATE : MonoBehaviour
 {
+
+	//FOR SWINGING
     public float swingForce = 4f;
-    public float speed = 1f;
-    public float jumpSpeed = 3f;
     public Vector2 ropeHook;
     public bool isSwinging;
-    public bool groundCheck;
-    private SpriteRenderer playerSprite;
-    private Rigidbody2D rBody;
-    private bool isJumping;
-    private Animator animator;
-    private float jumpInput;
-    private float horizontalInput;
 
+	//FOR MOVING
+	public float speed = 1f;
+	public float topSpeed = 1f;
+	public float sprintSpeed = 5f;
+	public float jumpSpeed = 3f;
+	private float jumpInput;
+	private float horizontalInput;
+
+	public bool groundCheck;
+	public bool sprinting;
 
 
 	//player health
 	public int health = 5;
+
+	//MISC
+	private SpriteRenderer playerSprite;
+	private Rigidbody2D rBody;
+	private bool isJumping;
+	private Animator animator;
 
     void Awake()
     {
@@ -30,7 +39,10 @@ public class PlayerMovementALTERNATE : MonoBehaviour
     void Update()
     {
         jumpInput = Input.GetAxis("Jump");
-        horizontalInput = Input.GetAxis("Horizontal");
+		float horizontalInput = Input.GetAxis("Horizontal");
+		//adds velocity to the rigidbody in the move direction * speed
+		GetComponent<Rigidbody2D>().velocity = new Vector2(horizontalInput * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
+
         var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
         groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
     }
@@ -93,6 +105,22 @@ public class PlayerMovementALTERNATE : MonoBehaviour
                 rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
             }
         }
+
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			sprinting = true;
+			topSpeed = sprintSpeed;
+		}
+
+		else
+
+		{
+			sprinting = false;
+			topSpeed = speed;
+		}
+
+
+
     }
 
 	public void Hurt()
@@ -105,5 +133,19 @@ public class PlayerMovementALTERNATE : MonoBehaviour
 		//if health isnt lower than zero, triggers the blink time
 		//else
 		//TriggerHurt(blinkTime);
+	}
+
+	public void OnCollisionEnter2D (Collision2D collision)
+	{
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("HealthPickUp"))
+		{
+			collision.gameObject.SetActive(false);
+			health++;
+			// collectSound.Play();
+
+		}
+			
+
 	}
 }
