@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4347076050690554}
   - component: {fileID: 212461236682219536}
   - component: {fileID: 50784086012484288}
-  m_Layer: 18
+  m_Layer: 16
   m_Name: RopeHingeAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 1070596275885496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4885487260172664}
   m_RootOrder: 3
@@ -355,7 +355,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 89efc3c93f3a6594dbe3f2f26384bb5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
