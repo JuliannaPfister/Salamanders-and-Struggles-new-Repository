@@ -280,13 +280,15 @@ MonoBehaviour:
   swingForce: 4
   ropeHook: {x: 0, y: 0}
   isSwinging: 0
-  speed: 2.5
-  topSpeed: 2.5
+  speed: 2
+  topSpeed: 2
   sprintSpeed: 7
   jumpSpeed: 5
   groundCheck: 0
   sprinting: 0
   health: 5
+  score: 0
+  scoreText: {fileID: 0}
 --- !u!114 &114528551849846132
 MonoBehaviour:
   m_ObjectHideFlags: 1

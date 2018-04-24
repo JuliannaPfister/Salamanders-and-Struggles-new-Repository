@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementALTERNATE : MonoBehaviour
 {
@@ -23,6 +27,10 @@ public class PlayerMovementALTERNATE : MonoBehaviour
 	//player health
 	public int health = 5;
 
+	//UI score
+	public int score;
+	public Text scoreText;
+
 	//MISC
 	private SpriteRenderer playerSprite;
 	private Rigidbody2D rBody;
@@ -39,9 +47,12 @@ public class PlayerMovementALTERNATE : MonoBehaviour
     void Update()
     {
         jumpInput = Input.GetAxis("Jump");
-		float horizontalInput = Input.GetAxis("Horizontal");
-		//adds velocity to the rigidbody in the move direction * speed
-		GetComponent<Rigidbody2D>().velocity = new Vector2(horizontalInput * topSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		 horizontalInput = Input.GetAxis("Horizontal");
+		//adds velocity to the rigidbody in the move direction * speed (if the player is touching the ground)
+		if (groundCheck = true) 
+		{
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalInput * topSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+		}
 
         var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
         groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
@@ -137,6 +148,54 @@ public class PlayerMovementALTERNATE : MonoBehaviour
 
 	public void OnCollisionEnter2D (Collision2D collision)
 	{
+		//if player collides with enemy, calls function Hurt()
+		Enemy enemy = collision.collider.GetComponent<Enemy>();
+		if (enemy != null)
+
+
+		{
+			Hurt();
+		}
+
+		// if player collides with gameobject with layer mask "traps" calls function Hurt()
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Traps"))
+		{
+			Hurt();
+		}
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("EnemyAdaga"))
+		{
+			Hurt();
+		}
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+		{
+			Hurt();
+		}
+
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("GameOver"))
+		{
+			Hurt();
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
+		if (collision.transform.tag == "Platform")
+		{
+			transform.parent = collision.transform;
+
+		}
+
+		if (collision.gameObject.layer == LayerMask.NameToLayer("PickUp"))
+		{
+			collision.gameObject.SetActive(false);
+			score++;
+			scoreText.text = score.ToString();
+			// collectSound.Play();
+
+
+
+		}
 
 		if (collision.gameObject.layer == LayerMask.NameToLayer("HealthPickUp"))
 		{
