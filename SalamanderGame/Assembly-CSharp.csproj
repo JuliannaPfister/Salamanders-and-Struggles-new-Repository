@@ -58,7 +58,9 @@
      <Compile Include="Assets\Scripts\EnemiesOnPlatforms.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyAdagacontroller.cs" />
+     <Compile Include="Assets\Scripts\EnemyTakingDamage.cs" />
      <Compile Include="Assets\Scripts\EnemyTwo.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\HealthUI.cs" />
      <Compile Include="Assets\Scripts\MovingBlock.cs" />
      <Compile Include="Assets\Scripts\Obstacles.cs" />

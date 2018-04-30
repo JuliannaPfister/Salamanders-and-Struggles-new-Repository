@@ -1450,7 +1450,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4885487260172664, guid: 6168151d807ec984784bd0ac430cca8b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.76
+      value: -5.58
       objectReference: {fileID: 0}
     - target: {fileID: 4885487260172664, guid: 6168151d807ec984784bd0ac430cca8b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2252,6 +2252,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1575840084 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1638161729312334, guid: 7f5e1a960f4a34645a4a77f3c5470b41,
+    type: 2}
+  m_PrefabInternal: {fileID: 807518997}
+--- !u!114 &1575840085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1575840084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbce5cf374a77e47a77a00e0261546f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  damage: 0
 --- !u!1 &1673123165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,6 +2370,25 @@ Transform:
   m_Father: {fileID: 277740791}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1781069015 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1638161729312334, guid: 7f5e1a960f4a34645a4a77f3c5470b41,
+    type: 2}
+  m_PrefabInternal: {fileID: 2031052909}
+--- !u!114 &1781069016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1781069015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbce5cf374a77e47a77a00e0261546f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 5
+  maxHealth: 5
+  damage: 0
 --- !u!1 &1795467877
 GameObject:
   m_ObjectHideFlags: 0

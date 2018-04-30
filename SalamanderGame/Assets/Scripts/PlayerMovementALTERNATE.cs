@@ -47,11 +47,38 @@ public class PlayerMovementALTERNATE : MonoBehaviour
     void Update()
     {
         jumpInput = Input.GetAxis("Jump");
-		 horizontalInput = Input.GetAxis("Horizontal");
+
+		horizontalInput = Input.GetAxis("Horizontal");
+
 		//adds velocity to the rigidbody in the move direction * speed (if the player is touching the ground)
-		if (groundCheck = true) 
+		//OLD SPRINTING METHOD
+		//if (groundCheck = true) 
+		//{
+		//	GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalInput * topSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+		//}
+
+		//new sprinting method
+
+		if(Input.GetKey(KeyCode.LeftShift))
 		{
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (horizontalInput * topSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+			speed=5;
+		}
+		else
+		{
+			speed=3;
+		}
+
+
+		//if the player is going left, the sprite is flipped to show them going left.
+		if (Input.GetAxis ("Horizontal") < -0.1f) 
+		{
+			transform.localScale = new Vector3 (-3, 4, 3);
+		}
+
+		//if the player is going right, the sprite is facing right
+		if (Input.GetAxis ("Horizontal") > 0.1f) 
+		{
+			transform.localScale = new Vector3 (3, 4, 3);
 		}
 
         var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;

@@ -36,7 +36,7 @@ public class PlayerAttacking : MonoBehaviour
 
 		canAttack = coolDownTimer > coolDownLength;
 
-		if (Input.GetKeyDown (KeyCode.Mouse0) && canAttack) {
+		if (Input.GetKeyDown (KeyCode.Mouse1) && canAttack) {
 			coolDownTimer = 0;
 			animationTimer = 0;
 		}

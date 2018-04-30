@@ -7,7 +7,8 @@
       <File FileName="Assets\Scripts\PlayerAttacking.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PauseMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\HealthUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerMovementALTERNATE.cs" Line="52" Column="3" />
+      <File FileName="Assets\Scripts\PlayerMovementALTERNATE.cs" Line="81" Column="47" />
+      <File FileName="Assets\Scripts\EnemyTakingDamage.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
